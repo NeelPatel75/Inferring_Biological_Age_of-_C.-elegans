@@ -1,0 +1,5 @@
+Transcriptome_data/
+Data/*.idx
+Data/*.fa
+.venv/
+__pycache__/

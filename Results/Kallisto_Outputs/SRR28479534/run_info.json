@@ -1,0 +1,14 @@
+{
+	"n_targets": 34689,
+	"n_bootstraps": 0,
+	"n_processed": 71135852,
+	"n_pseudoaligned": 55798128,
+	"n_unique": 33281357,
+	"p_pseudoaligned": 78.4,
+	"p_unique": 46.8,
+	"kallisto_version": "0.51.1",
+	"index_version": 13,
+	"k-mer length": 31,
+	"start_time": "Fri Mar 27 04:19:44 2026",
+	"call": "kallisto quant -i Data/elegans_index.idx -o Results/Kallisto_Outputs/SRR28479534 Transcriptome_data/SRR28479534_1.fastq Transcriptome_data/SRR28479534_2.fastq"
+}
