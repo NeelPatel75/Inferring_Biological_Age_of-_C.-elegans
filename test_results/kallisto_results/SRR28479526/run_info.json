@@ -1,0 +1,14 @@
+{
+	"n_targets": 10000,
+	"n_bootstraps": 0,
+	"n_processed": 10000,
+	"n_pseudoaligned": 2008,
+	"n_unique": 1825,
+	"p_pseudoaligned": 20.1,
+	"p_unique": 18.2,
+	"kallisto_version": "0.51.1",
+	"index_version": 13,
+	"k-mer length": 31,
+	"start_time": "Tue Mar 31 15:51:27 2026",
+	"call": "kallisto quant -i /home/npatel79/Inferring_Biological_Age_of-_C.-elegans/c_elegans_index.idx -o /home/npatel79/Inferring_Biological_Age_of-_C.-elegans/test_results/kallisto_results/SRR28479526 /home/npatel79/Inferring_Biological_Age_of-_C.-elegans/sample_test_data/SRR28479526_1.fastq /home/npatel79/Inferring_Biological_Age_of-_C.-elegans/sample_test_data/SRR28479526_2.fastq"
+}

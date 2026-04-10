@@ -3,3 +3,10 @@ Data/*.idx
 Data/*.fa
 .venv/
 __pycache__/
+sample_test_data/
+test_results/
+kallisto_outputs/
+*.fa
+*.gff3
+*.tsv
+wget-log*
