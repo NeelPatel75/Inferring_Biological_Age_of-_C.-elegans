@@ -1,7 +1,0 @@
---2026-03-31 15:58:06--  ftp://ftp.wormbase.org/pub/wormbase/releases/current/species/c_elegans/PRJNA13758/c_elegans.PRJNA13758.WBPS19.mRNA_transcripts.fa.gz
-           => ‘c_elegans.PRJNA13758.WBPS19.mRNA_transcripts.fa.gz’
-Resolving ftp.wormbase.org (ftp.wormbase.org)... 104.21.73.222, 172.67.167.89, 2606:4700:3034::ac43:a759, ...
-Connecting to ftp.wormbase.org (ftp.wormbase.org)|104.21.73.222|:21... failed: Connection timed out.
-Connecting to ftp.wormbase.org (ftp.wormbase.org)|172.67.167.89|:21... failed: Connection timed out.
-Connecting to ftp.wormbase.org (ftp.wormbase.org)|2606:4700:3034::ac43:a759|:21... failed: Network is unreachable.
-Connecting to ftp.wormbase.org (ftp.wormbase.org)|2606:4700:3031::6815:49de|:21... failed: Network is unreachable.

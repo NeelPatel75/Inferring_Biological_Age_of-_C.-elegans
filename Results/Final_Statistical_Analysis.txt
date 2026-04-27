@@ -1,0 +1,42 @@
+C. ELEGANS BIOLOGICAL AGE STATISTICAL REPORT
+============================================================
+
+--- SECTION 1: CLOCK VALIDATION (WT ONLY) ---
+
+COMPARISON: WT_L1 vs WT_Embryo
+  Sample sizes: n(WT_L1)=4, n(WT_Embryo)=6
+  Mean Ages:    WT_L1=95.4397, WT_Embryo=91.1664
+  t=0.8281, p=0.440290
+  SIGNIFICANT:  NO
+
+--- SECTION 2: GENERAL DEVELOPMENTAL STAGES (ALL SAMPLES) ---
+
+COMPARISON: All_L1_Larvae vs All_Embryos
+  Sample sizes: n(All_L1_Larvae)=7, n(All_Embryos)=9
+  Mean Ages:    All_L1_Larvae=100.3288, All_Embryos=83.8186
+  t=2.8390, p=0.014833
+  SIGNIFICANT:  YES
+  INTERPRETATION: All_L1_Larvae is biologically OLDER than All_Embryos
+
+--- SECTION 3: GENOTYPE IMPACT WITHIN STAGES ---
+
+COMPARISON: xol1_Embryo vs WT_Embryo
+  Sample sizes: n(xol1_Embryo)=3, n(WT_Embryo)=6
+  Mean Ages:    xol1_Embryo=69.1230, WT_Embryo=91.1664
+  t=-3.0680, p=0.024748
+  SIGNIFICANT:  YES
+  INTERPRETATION: xol1_Embryo is biologically YOUNGER than WT_Embryo
+
+COMPARISON: xol1_L1 vs WT_L1
+  Sample sizes: n(xol1_L1)=3, n(WT_L1)=4
+  Mean Ages:    xol1_L1=106.8475, WT_L1=95.4397
+  t=2.8906, p=0.074217
+  SIGNIFICANT:  NO
+
+--- SECTION 4: OVERALL IMPACT (All Stages Combined) ---
+
+COMPARISON: xol1_All vs WT_All
+  Sample sizes: n(xol1_All)=6, n(WT_All)=10
+  Mean Ages:    xol1_All=87.9852, WT_All=92.8757
+  t=-0.5207, p=0.620805
+  SIGNIFICANT:  NO
