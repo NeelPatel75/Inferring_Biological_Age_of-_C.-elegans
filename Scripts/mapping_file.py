@@ -1,5 +1,5 @@
 import pandas as pd
-
+# User does not need this file to run the code; it was just used to create the transcript map from the Gene IDs in the annotation file. 
 # Path to your giant GFF3
 GFF_FILE = "/home/npatel79/Inferring_Biological_Age_of-_C.-elegans/Data/sample_test_data/caenorhabditis_elegans.PRJNA13758.WBPS19.annotations.gff3"
 
