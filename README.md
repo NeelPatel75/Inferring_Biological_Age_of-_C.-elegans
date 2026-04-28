@@ -14,6 +14,18 @@ This pipeline allows users to study how genetic mutations, such as *xol-1*, impa
 
 ---
 
+## Project Structure
+
+| File | Role |
+|------|------|
+| `run_kallisto.py` | Runs Phase 1 and creates the Kallisto output folder |
+| `run_aging_clock.py` | Runs Phases 2–4 using the Kallisto outputs |
+| `Biological_Age_Predictor.py` | Aging clock model (called automatically) |
+| `biological_age_correction.py` | Correction step (called automatically) |
+| `mapping_file.py` | Mapping utility (called automatically) |
+
+
+
 ## Pipeline Overview
 
 ### Phase 1: Read Quantification with Kallisto
