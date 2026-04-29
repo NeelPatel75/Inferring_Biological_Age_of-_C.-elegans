@@ -122,6 +122,8 @@ python3 Scripts/run_pipeline.py
 - **Final_Biological_Age_Results.csv** → predicted biological age
 - **Final_Statistical_Analysis.txt** → statistical results
 
+##### Note: Look at results folder for all of these files 
+
 ---
 
 ## Sample Test Data
