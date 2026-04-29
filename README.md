@@ -153,4 +153,15 @@ Note: Due to this dataset being reduced, do not take any of the results of the s
 
 - Add visualizations
 - Support larger datasets
-- Biological data improvement: look at the Adult C. Elegans transcriptome 
+- Biological data improvement: look at the Adult C. Elegans transcriptome
+
+---
+
+## Citations
+
+- https://pachterlab.github.io/kallisto/manual
+- https://docs.scipy.org/doc/scipy/reference/stats.html
+- https://docs.python.org/3/library/glob.html
+- https://www.alliancegenome.org/members/wormbase
+- https://www.dataquest.io/blog/python-subprocess/
+- https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
