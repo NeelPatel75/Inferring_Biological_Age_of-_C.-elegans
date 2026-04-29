@@ -115,6 +115,15 @@ python3 Scripts/run_pipeline.py
 
 ---
 
+## Input files 
+
+- **BitAge_v2_coefficients.csv** → Used in phase 3 to apply correction formula to predicted ages  
+- **Predictor_Genes.csv** → Used in phase 2 for formatting and phase 3 for predicting the ages 
+- **transcript_map.csv** → Used in phase 1 to link WBgene_ID to ttarget_ID.
+- **merged_cpm_counts.csv** → Used in phase 2 to store converted CPM data for each gene.
+
+--- 
+
 ## Output Files
 
 - **kallisto_outputs**.csv → Abundances in TPM + WBGene map 
