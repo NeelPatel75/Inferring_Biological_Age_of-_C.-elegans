@@ -110,17 +110,8 @@ raw_results = raw_results.rename(columns={'Predicted_Biological_Age': 'Bio_Age'}
 # Apply the statistical survival correction to the raw predicted ages
 # This adjusts for biases in the biological clock models
 final_df = calculate_Bio_Age_correction(raw_results)
-# Save the final corrected biological age results to a CSV file
-final_df.to_csv(OUTPUT_FILE)
-# --- 5. Test for statistical significance using T-test (Phase 4) ---
-print("\nStep 4: Running Detailed Statistical Analysis...")
 
-# Moves SRR IDs from index to a column named Sample to avoid KeyError
-if 'Sample' not in final_df.columns:
-    final_df = final_df.reset_index()
-    final_df = final_df.rename(columns={final_df.columns[0]: 'Sample'})
-
-# Define the gorupings for the SRR files 
+ # Define the gorupings for the SRR files 
 wt_embryo = ["SRR28479540", "SRR28479539", "SRR28479538", "SRR28479525", "SRR28479526", "SRR28479527"]
 wt_l1 = ["SRR28479534", "SRR28479533", "SRR28479532", "SRR28479531"]
 xol1_embryo = ["SRR28479537", "SRR28479536", "SRR28479535"]
@@ -130,6 +121,49 @@ all_embryo = wt_embryo + xol1_embryo
 all_l1 = wt_l1 + xol1_l1
 wt_all = wt_embryo + wt_l1
 xol1_all = xol1_embryo + xol1_l1
+# --- ADD MUTATION AND STAGE COLUMNS (FOR REPO READABILITY) ---
+
+def assign_stage(sample):
+    if any(sample.startswith(s) for s in wt_embryo):
+        return "Embryo"
+    elif any(sample.startswith(s) for s in wt_l1):
+        return "L1"
+    elif any(sample.startswith(s) for s in xol1_embryo):
+        return "Embryo"
+    elif any(sample.startswith(s) for s in xol1_l1):
+        return "L1"
+    else:
+        return "Unknown"
+
+def assign_mutation(sample):
+    if any(sample.startswith(s) for s in wt_embryo + wt_l1):
+        return "WT"
+    elif any(sample.startswith(s) for s in xol1_embryo + xol1_l1):
+        return "xol-1"
+    else:
+        return "Unknown"
+
+# Make sure Sample column exists
+if 'Sample' not in final_df.columns:
+    final_df = final_df.reset_index()
+    final_df = final_df.rename(columns={final_df.columns[0]: 'Sample'})
+
+# Add new columns
+final_df["Stage"] = final_df["Sample"].apply(assign_stage)
+final_df["Mutation"] = final_df["Sample"].apply(assign_mutation)
+
+
+# Save the final corrected biological age results to a CSV file
+final_df.to_csv(OUTPUT_FILE, index=False)
+
+# --- 5. Test for statistical significance using T-test (Phase 4) ---
+print("\nStep 4: Running Detailed Statistical Analysis...")
+
+# Moves SRR IDs from index to a column named Sample to avoid KeyError
+if 'Sample' not in final_df.columns:
+    final_df = final_df.reset_index()
+    final_df = final_df.rename(columns={final_df.columns[0]: 'Sample'})
+
 
 # Finds and extracts the biological age values for a specific list of SRR IDs.
 def get_group_ages(df, srr_list, sample_col, age_col):
