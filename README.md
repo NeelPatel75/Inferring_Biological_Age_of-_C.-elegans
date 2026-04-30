@@ -140,25 +140,24 @@ python3 Scripts/visualize_biological_age.py
 
 
 ---
+## Input Files
 
-## Input files 
-
-- **BitAge_v2_coefficients.csv** → Used in phase 3 to apply correction formula to predicted ages  
-- **Predictor_Genes.csv** → Used in phase 2 for formatting and phase 3 for predicting the ages 
-- **transcript_map.csv** → Used in phase 1 to link WBgene_ID to ttarget_ID.
-- **merged_cpm_counts.csv** → Used in phase 2 to store converted CPM data for each gene.
+- **BitAge_v2_coefficients.csv** → Used in Phase 3 to apply the correction formula to predicted ages
+- **Predictor_Genes.csv** → Used in Phase 2 for formatting/filtering and in Phase 3 for predicting biological age
+- **transcript_map.csv** → Used in Phase 1 to link `WBGene_ID` with `target_ID`
 - **Final_Biological_Age_Results.csv** → Generated in Phase 3 and used as input for visualization
---- 
+
+---
 
 ## Output Files
 
-- **kallisto_outputs**.csv → Abundances in TPM + WBGene map 
-- **GSE65765_CPM.csv** → gene expression matrix in CPM 
-- **Final_Biological_Age_Results.csv** → predicted biological age
-- **Final_Statistical_Analysis.txt** → statistical results
-- **Corrected_Biological_Age_Comparisons.png**  → Bar plot visualizing group comparisons with significance annotations 
+- **kallisto_outputs/** → Transcript-level abundances in TPM with WBGene mapping
+- **GSE65765_CPM.csv** → Gene expression matrix in CPM
+- **Final_Biological_Age_Results.csv** → Predicted and corrected biological age values
+- **Final_Statistical_Analysis.txt** → Statistical analysis results
+- **Corrected_Biological_Age_Comparisons.png** → Bar plot visualizing group comparisons with significance annotations
 
-##### Note: Look at results folder for all of these files 
+##### Note: Look in the `Results/` folder for these files.
 
 ---
 
