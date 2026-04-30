@@ -15,15 +15,14 @@ This pipeline allows users to study how genetic mutations, such as *xol-1*, impa
 ---
 
 ## Project Structure
-
 | File | Role |
 |------|------|
 | `run_kallisto.py` | Runs Phase 1 and creates the Kallisto output folder |
 | `run_aging_clock.py` | Runs Phases 2–4 using the Kallisto outputs |
 | `Biological_Age_Predictor.py` | Aging clock model (called automatically by run_aging_clock.py) |
 | `biological_age_correction.py` | Correction step (called automatically by run_aging_clock.py) |
-| `mapping_file.py` | Used to map WBgne_ID with target_ID (already ran to set up for phase 1, user does not need to run this) |
-
+| `mapping_file.py` | Used to map WBgene_ID with target_ID (already ran to set up for phase 1, user does not need to run this) |
+| `visualize_biological_age.py` | Generates a bar plot of corrected biological age across groups with error bars and significance annotations (user must run this if they would like to visualize data)|
 
 
 ## Pipeline Overview
@@ -57,6 +56,26 @@ This pipeline allows users to study how genetic mutations, such as *xol-1*, impa
   - All xol-1 vs All WT
 - Outputs p-values, group means, and interpretation
 
+### Graphing Statistical Analysis with visualize_biological_age.py
+
+This script visualizes the statistical analysis by generating a bar plot of corrected biological age across predefined sample groups.
+
+- Reads input from:
+  - `Results/Final_Biological_Age_Results.csv`
+- Outputs:
+  - `Results/Corrected_Biological_Age_Comparisons.png`
+
+The plot displays:
+- Mean corrected biological age for each group
+- Error bars representing standard error of the mean (SEM)
+- Statistical significance between groups using asterisks:
+  - `*` = p < 0.05  
+  - `**` = p < 0.01  
+  - `***` = p < 0.001  
+
+Significance is determined using Welch’s t-test (unequal variance), consistent with the statistical analysis performed in the pipeline.
+
+
 ---
 
 ## Dependencies
@@ -67,7 +86,7 @@ This pipeline allows users to study how genetic mutations, such as *xol-1*, impa
 - Kallisto
 - Pandas
 - NumPy
-- Spicy Stats
+- SciPy Stats
 - glob
 - sys
 - subprocess
@@ -86,8 +105,8 @@ pip install pandas numpy scipy statsmodels pingouin
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Inferring_Biological_Age_of_C_elegans.git
-cd Inferring_Biological_Age_of_C_elegans
+git clone https://github.com/your-username/Inferring_Biological_Age_of-_C.-elegans.git
+cd Inferring_Biological_Age_of-_C.-elegans
 ```
 
 ### 2. Install Kallisto
@@ -110,8 +129,15 @@ python3 Scripts/run_kallisto.py
 ### Step 2: Run Aging Clock Pipeline
 
 ```bash
-python3 Scripts/run_pipeline.py
+python3 Scripts/run_aging_clock.py
 ```
+
+### Step 3: Graph Statistical Analysis
+
+```bash
+python3 Scripts/visualize_biological_age.py
+```
+
 
 ---
 
@@ -121,7 +147,7 @@ python3 Scripts/run_pipeline.py
 - **Predictor_Genes.csv** → Used in phase 2 for formatting and phase 3 for predicting the ages 
 - **transcript_map.csv** → Used in phase 1 to link WBgene_ID to ttarget_ID.
 - **merged_cpm_counts.csv** → Used in phase 2 to store converted CPM data for each gene.
-
+- **Final_Biological_Age_Results.csv** → Generated in Phase 3 and used as input for visualization
 --- 
 
 ## Output Files
@@ -130,6 +156,7 @@ python3 Scripts/run_pipeline.py
 - **GSE65765_CPM.csv** → gene expression matrix in CPM 
 - **Final_Biological_Age_Results.csv** → predicted biological age
 - **Final_Statistical_Analysis.txt** → statistical results
+- **Corrected_Biological_Age_Comparisons.png  → Bar plot visualizing group comparisons with significance annotations 
 
 ##### Note: Look at results folder for all of these files 
 
@@ -145,7 +172,7 @@ Note: Due to this dataset being reduced, do not take any of the results of the s
 ## Notes
 
 - `run_kallisto.py` works with new datasets and is phase 1 
-- `run_again_clock.py` runs the full pipeline phase 2-4 
+- `run_aging_clock.py` runs the full pipeline phase 2-4 
 - Files are automatically detected
 - Ensure correct file paths
 
@@ -162,9 +189,8 @@ Note: Due to this dataset being reduced, do not take any of the results of the s
 
 ## Future Improvements
 
-- Add visualizations
 - Support larger datasets
-- Biological data improvement: look at the Adult C. Elegans transcriptome
+- Biological data improvement: look at the Adult C. Elegans transcriptome and increase sample size 
 
 ---
 
