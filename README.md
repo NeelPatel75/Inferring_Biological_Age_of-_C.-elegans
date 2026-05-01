@@ -90,12 +90,13 @@ Significance is determined using Welch’s t-test (unequal variance), consistent
 - glob
 - sys
 - subprocess
-- os 
+- os
+- matplotlib
 
 ### How to Download Python Packages 
 
 ```bash
-pip install pandas numpy scipy statsmodels pingouin
+pip install pandas numpy scipy statsmodels pingouin matplotlib
 ```
 
 ---
